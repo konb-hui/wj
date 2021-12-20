@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.konb.wj.mapper.JotterMapper">
+    <update id="recoverJotter">
+        update jotter set is_deleted = 0 where id = #{id}
+    </update>
+
+    <select id="getDeletedJotter" resultType="com.konb.wj.pojo.Jotter">
+        select * from jotter where is_deleted = 1
+    </select>
+</mapper>
